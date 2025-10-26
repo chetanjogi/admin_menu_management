@@ -1,75 +1,85 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# **💻 POS & Inventory Management System**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the front-end code for a simple Point-of-Sale (POS) and Menu Administration application, designed to manage menu categories, sub-items, and handle order creation.
 
-## Available Scripts
+## **📂 Project Structure**
 
-In the project directory, you can run:
+The application is built using React (JSX) and standard CSS, adhering to a single-file component structure for ease of development and deployment in limited environments.
 
-### `npm start`
+/  
+├── public/  
+├── src/  
+│   ├── App.jsx             \# Main application component and routing logic  
+│   ├── App.css             \# Global and layout styles  
+│   ├── Menu.jsx            \# Component for Menu/Inventory Administration  
+│   ├── Menu.css            \# Specific styles for the Admin Menu  
+│   ├── OrderScreen.jsx     \# Component for the Point-of-Sale (POS) interface  
+│   └── OrderScreen.css     \# Specific styles for the POS screen  
+└── package.json
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **🚀 Core Components**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **1\. src/App.jsx and src/App.css**
 
-### `npm test`
+| File | Description |
+| :---- | :---- |
+| **App.jsx** | The root component. It manages the main application state, including the menuItems data structure, and provides the navigation/switching logic between the two primary views: **Admin Menu** and **Order Screen**. |
+| **App.css** | Contains global styles, font definitions, CSS variables, and the primary application container layout. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **2\. Admin Menu (Menu.jsx)**
 
-### `npm run build`
+The Admin Menu is a two-column layout optimized for desktop management .
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| File | Description |
+| :---- | :---- |
+| **Menu.jsx** | Handles all CRUD (Create, Read, Update, Delete) operations for menu categories and individual sub-items. The "Add New Category" form is prominently displayed in the main content area for better layout. |
+| **Menu.css** | Implements the **Toast-Style** Admin panel layout. It defines the fixed-width left navigation pane and the fluid-width main content area, using CSS Grid for the primary two-column structure and Flexbox for responsive form groups. |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **3\. Order Screen (OrderScreen.jsx)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+(Note: This screen is planned/in development to handle order creation logic.)
 
-### `npm run eject`
+| File | Description |
+| :---- | :---- |
+| **OrderScreen.jsx** | Will be the main Point-of-Sale (POS) interface. It will consume the menuItems state from App.jsx to display categories and items, allowing users to build an order, manage quantities, and apply modifiers (future feature). |
+| **OrderScreen.css** | Will contain specific grid and flex styles necessary to lay out the categories, item buttons, and the order checkout panel for an efficient POS workflow. |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **⚙️ Getting Started (Local Setup)**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow these steps to download and run the application on your local machine using Node.js.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Prerequisites**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You must have **Node.js** and **npm** (Node Package Manager) installed.
 
-## Learn More
+### **1\. Clone the Repository**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open your terminal or command prompt and clone the repository (replace \[repo-url\] with the actual URL):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash 
+git clone \[repo-url\] pos-admin-menu
+cd pos-admin-menu
+```
+### **2\. Install Dependencies**
 
-### Code Splitting
+Install all necessary React and development packages defined in package.json:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash 
+npm install
+```
 
-### Analyzing the Bundle Size
+### **3\. Run the Application**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the development server. This command usually opens the application automatically in your default web browser at http://localhost:3000:
 
-### Making a Progressive Web App
+```bash 
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application will now be running and ready for development or testing\!
 
-### Advanced Configuration
+## **✨ Styling Approach**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# admin_menu_management
-menu and pos_order screen
->>>>>>> 3c62d684722ad74ddb52c14703cb75d57007d4e5
+* **Responsive Design:** Styles include media queries to ensure usability on both desktop and mobile devices.  
+* **Aesthetics:** The design uses a clean, modern color palette defined by CSS variables, favoring rounded corners and subtle shadows for a polished, professional look.  
+* **Flexbox/Grid:** Modern CSS layout techniques are used heavily to create the two-column administrative layout (Menu.css) and dynamic form fields (input-group).

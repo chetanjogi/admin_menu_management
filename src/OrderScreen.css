@@ -1,0 +1,229 @@
+/* src/OrderScreen.css - High-Contrast Light Theme for Professional POS */
+
+:root {
+  --color-primary: #007bff; /* Blue for key actions */
+  --color-success: #28a745; /* Green for pricing/completion */
+  --color-danger: #dc3545; /* Red for deletion */
+  --color-background: #f8f9fa; /* Very light background */
+  --color-surface: #ffffff; /* White card background */
+  --color-text-dark: #343a40; /* Dark text */
+  --color-text-light: #6c757d; /* Lighter text */
+  --color-category-bar: #e9ecef; /* Light gray bar */
+}
+
+.order-screen-layout {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+  min-height: 90vh;
+  background-color: var(--color-background);
+}
+
+/* --- Left Column: Menu Grid Container --- */
+.menu-grid-container {
+  padding: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-grid-container h1 {
+  color: var(--color-text-dark);
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 1.8rem;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Category Tabs (Top Row) */
+.category-tabs {
+  background-color: var(--color-category-bar);
+  padding: 0;
+  overflow-x: auto;
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+  flex-shrink: 0;
+}
+
+.category-tabs .btn {
+  padding: 12px 20px;
+  border-radius: 0;
+  margin: 0;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border-right: 1px solid #ccc;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.category-tabs .btn:hover {
+  background-color: #e2e6ea;
+}
+
+.category-tabs .btn.active {
+  background-color: var(--color-primary); /* Active tab blue */
+  color: white;
+  font-weight: 700;
+  border-right-color: var(--color-primary);
+}
+
+/* Menu Items Grid (Bottom Area) */
+.menu-grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px; /* Better spacing */
+  padding: 20px;
+  background-color: var(--color-surface);
+  overflow-y: auto;
+}
+
+.menu-item-button {
+  background-color: var(--color-surface);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item-button:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.item-icon-placeholder {
+    font-size: 36px;
+    margin-bottom: 4px;
+    color: var(--color-primary);
+}
+
+.menu-item-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.menu-item-price {
+  font-size: 1rem;
+  color: var(--color-success); /* Green price */
+  font-weight: bold;
+}
+
+/* --- Right Column: Order Summary (Cart) --- */
+.order-summary {
+  background-color: var(--color-surface);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.order-summary h2 {
+  color: var(--color-text-dark);
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.order-summary-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px; /* Space for scrollbar */
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item-name {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+.cart-item-price {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  gap: 5px;
+}
+
+.btn-quantity {
+  background-color: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+.btn-quantity:hover {
+  background-color: #0056b3;
+}
+
+.quantity-count {
+  margin: 0 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cart-item-total-price {
+    font-weight: bold;
+    color: var(--color-success);
+}
+
+.cart-total {
+  border-top: 2px solid var(--color-text-dark);
+  padding-top: 15px;
+  margin-top: auto;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.cart-total span:last-child {
+    color: var(--color-danger); /* Use red for the final total for impact */
+}
+
+.btn-checkout {
+    padding: 15px;
+    background-color: var(--color-success) !important;
+    font-size: 1.1rem;
+}
+
+/* --- Responsive Layout for Smaller Screens --- */
+@media (max-width: 992px) {
+  .order-screen-layout {
+    grid-template-columns: 1fr; /* Stack menu and cart vertically */
+    padding: 10px;
+  }
+  .order-summary {
+    max-height: 500px; /* Limit height of cart on mobile */
+  }
+}
